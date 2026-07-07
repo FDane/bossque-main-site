@@ -85,7 +85,7 @@ export const translations = {
     },
     services: {
       title: "Servis Yang Kami Sediakan",
-      subtitle: "Dari semburan pantas hingga cucian menyeluruh — pilih rawatan yang sesuai untuk kenderaan anda.",
+      subtitle: "Dari semburan pantas hingga cucian menyeluruh — pilih cucian yang sesuai untuk kenderaan anda.",
       cta: "Dapatkan Harga",
     },
     local: {
@@ -103,7 +103,7 @@ export const translations = {
       label: "Promosi",
       title: "Langkau barisan hari ini",
       text: "Tempah lebih awal di WhatsApp untuk servis keutamaan dan masuk cepat. Tiada kesulitan diperlukan — hanya servis lebih pantas.",
-      cta: "Langkau barisan di WhatsApp",
+      cta: "Tempah di WhatsApp",
       waText: "Hai Carwash Bossque! Saya mahu langkau barisan dan tempah servis.",
       noShow: "Jangan tunjuk lagi",
     },

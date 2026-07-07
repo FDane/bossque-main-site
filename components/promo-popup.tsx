@@ -15,11 +15,19 @@ export function PromoPopup({ t }: { t: Translation }) {
     }
   }, [])
 
-  useEffect(() => {
-    if (!isOpen) return
-    const autoClose = window.setTimeout(() => setIsOpen(false), 8000)
-    return () => window.clearTimeout(autoClose)
-  }, [isOpen])
+    useEffect(() => {
+      if (!isOpen) return
+      const autoClose = window.setTimeout(() => setIsOpen(false), 8000)
+      return () => window.clearTimeout(autoClose)
+    }, [isOpen])
+
+    useEffect(() => {
+      const onKey = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setIsOpen(false)
+      }
+      if (isOpen) window.addEventListener("keydown", onKey)
+      return () => window.removeEventListener("keydown", onKey)
+    }, [isOpen])
 
   const closeModal = (dontShowAgain = false) => {
     if (dontShowAgain) {
@@ -31,7 +39,12 @@ export function PromoPopup({ t }: { t: Translation }) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed right-6 top-[20%] z-50 w-[min(360px,calc(100%-2rem))] animate-slide-in-right rounded-3xl border border-white/15 bg-navy/95 p-5 shadow-2xl shadow-black/30 backdrop-blur-xl">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={t.promo.title}
+      className="fixed left-4 right-4 sm:right-6 sm:left-auto bottom-4 sm:bottom-12 z-50 w-[calc(100%-2rem)] max-w-[360px] motion-safe:animate-slide-in-right motion-reduce:animate-none rounded-3xl border border-white/15 bg-navy/95 p-4 sm:p-5 shadow-2xl shadow-black/30 backdrop-blur-xl"
+    >
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.24em] text-lime/80">{t.promo.label}</p>

@@ -6,7 +6,7 @@ export const WHATSAPP_NUMBER = "60137187040"
 // TODO: Replace with your real production domain (no trailing slash).
 // This single value drives metadataBase, canonical URLs, sitemap.xml, robots.txt,
 // and the JSON-LD schema — update it here once your domain is live.
-export const SITE_URL = "https://www.carwashbossque.my"
+export const SITE_URL = "https://www.bossque.my"
 
 export const BUSINESS = {
   name: "Carwash Bossque",

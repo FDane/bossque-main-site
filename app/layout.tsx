@@ -4,6 +4,8 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import { BUSINESS, OPENING_HOURS_SPEC, SITE_URL } from '@/lib/data'
 import './globals.css'
+import UnregisterSW from '@/components/unregister-sw'
+import RegisterSW from '@/components/register-sw'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const poppins = Poppins({
@@ -109,11 +111,13 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        {process.env.NODE_ENV !== 'production' && <UnregisterSW />}
         {children}
         {process.env.NODE_ENV === 'production' && (
           <>
             <Analytics />
             <SpeedInsights />
+            <RegisterSW />
           </>
         )}
       </body>
