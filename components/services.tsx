@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { SERVICES } from "@/lib/data"
 import type { Lang, Translation } from "@/lib/i18n"
@@ -36,13 +37,13 @@ export function Services({ lang, t }: { lang: Lang; t: Translation }) {
                 <p className="flex-1 text-sm leading-relaxed text-white/70">
                   {lang === "ms" ? service.descMs : service.descEn}
                 </p>
-                <a
-                  href="#calculator"
+                <Link
+                  href="/services#calculator"
                   className="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-white transition-colors hover:text-lime"
                 >
                   {t.services.cta}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </Link>
               </div>
             </li>
           ))}
