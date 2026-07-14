@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { MapPin, Star } from "lucide-react"
 import type { Translation } from "@/lib/i18n"
 
@@ -29,18 +30,18 @@ export function Hero({ t }: { t: Translation }) {
           </h1>
           <p className="max-w-2xl text-lg leading-relaxed text-white/80 text-pretty">{t.hero.subtitle}</p>
           <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="#calculator"
+            <Link
+              href="/services#calculator"
               className="rounded-full bg-lime px-6 py-3 font-semibold text-lime-foreground transition-transform hover:scale-105"
             >
               {t.hero.ctaPrimary}
-            </a>
-            <a
-              href="#services"
+            </Link>
+            <Link
+              href="/services"
               className="rounded-full border border-white/20 px-6 py-3 font-semibold text-white transition-colors hover:border-lime hover:text-lime"
             >
               {t.hero.ctaSecondary}
-            </a>
+            </Link>
           </div>
           <dl className="mt-6 flex flex-wrap gap-8">
             <div>

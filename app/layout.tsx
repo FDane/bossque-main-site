@@ -6,6 +6,7 @@ import { BUSINESS, OPENING_HOURS_SPEC, SITE_URL } from '@/lib/data'
 import './globals.css'
 import UnregisterSW from '@/components/unregister-sw'
 import RegisterSW from '@/components/register-sw'
+import { SiteShell } from '@/components/site-shell'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const poppins = Poppins({
@@ -112,7 +113,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {process.env.NODE_ENV !== 'production' && <UnregisterSW />}
-        {children}
+        <SiteShell>{children}</SiteShell>
         {process.env.NODE_ENV === 'production' && (
           <>
             <Analytics />
