@@ -22,6 +22,7 @@ export function Navbar({
     { href: "/", label: lang === "ms" ? "Utama" : "Home" },
     { href: "/about", label: lang === "ms" ? "Tentang" : "About" },
     { href: "/services", label: t.nav.services },
+    { href: "/careers", label: lang === "ms" ? "Kerjaya" : "Careers" },
     { href: "/faq", label: t.nav.faq },
     { href: "/contact", label: lang === "ms" ? "Hubungi" : "Contact" },
   ]

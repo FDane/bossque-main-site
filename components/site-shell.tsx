@@ -2,7 +2,7 @@
 
 import { LanguageProvider, useLanguage } from "@/components/language-provider"
 import { Navbar } from "@/components/navbar"
-import { SiteFooter } from "@/components/site-footer"
+import { Footer } from "@/components/Footer"
 
 function ShellContent({ children }: { children: React.ReactNode }) {
   const { lang, setLang, t } = useLanguage()
@@ -11,7 +11,7 @@ function ShellContent({ children }: { children: React.ReactNode }) {
     <div className="flex min-h-screen flex-col bg-background">
       <Navbar lang={lang} setLang={setLang} t={t} />
       <main className="flex-1">{children}</main>
-      <SiteFooter t={t} />
+      <Footer />
     </div>
   )
 }
